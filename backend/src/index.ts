@@ -12,10 +12,26 @@ const StartServer = async () => {
 
 	await App(app);
 
-	app.listen(PORT || 8000, () => {
-		console.clear();
-		console.log(`App is listening on heroku port ${PORT}`);
+	// handling uncaught exception
+	process.on("uncaughtException", (err) => {
+		console.log(`Error: ${err.message}`);
+		console.log(`Shutting down the server for handling uncaught exception`);	
 	})
+
+	const server = app.listen(PORT || 8000, () => {
+		console.clear();
+		console.log(`App is listening on port ${PORT}`);
+	})
+
+	// unhandled promise rejection
+	process.on("unhandledRejection", (err) => {
+		console.log(`Shutting down the server for ${err}`);
+		console.log(`Shutting down the server for unhandled promise rejection`);
+
+		server.close(() => {
+			process.exit(1);
+		});
+	});
 }
 
 StartServer();

@@ -1,0 +1,74 @@
+nav {
+	display: flex;
+	position: sticky;
+	top: 0;
+	height: 60px;
+	background-color: #fff;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+.logo a {
+	color: #333;
+}
+
+.search {
+	flex: 1;
+	margin: 0 20px;
+}
+
+.search input {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	font-size: 1rem;
+	outline: none;
+}
+
+.profile {
+	position: relative;
+}
+
+.profile button {
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.profile img {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+}
+
+.dropdown {
+	position: absolute;
+	top: 40px;
+	right: 0px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	align-items: flex-start;
+	background-color: #fff;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
+	padding: 10px 20px;
+}
+
+.dropdown a {
+	margin: 5px 0;
+	text-decoration: none;
+	color: #333;
+}
